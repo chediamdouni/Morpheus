@@ -1,7 +1,7 @@
 "use client";
 
 
-import { motion, useAnimation, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import React, { useRef } from "react";
 
 const bgImages = [
