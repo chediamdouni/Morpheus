@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import CarouselImages from "./CarouselImages";
 import CreatorsGrid from "./CreatorsGrid";
 import { motion } from "framer-motion";
@@ -58,11 +59,13 @@ export default function MediTheriaShowcase() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <img
+          <Image
             src="/images/MariemKoubaa.png"
             alt="Défilé MediTheria"
             className="rounded-xl shadow-lg w-full max-w-md object-cover"
             style={{ aspectRatio: "4/5" }}
+            width={384}
+            height={480}
           />
         </motion.div>
         <motion.div
@@ -74,21 +77,21 @@ export default function MediTheriaShowcase() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Un événement signé Morpheus</h2>
           <p className="text-lg max-w-2xl md:max-w-full mx-auto md:mx-0 leading-relaxed">
-            Fondée par Myriam Koubaa, Morpheus est une structure spécialisée dans l’événementiel et la communication de luxe. À travers MediTheria, elle orchestre un défilé inédit à Monaco, mettant en lumière les traditions artisanales revisitées par la mode contemporaine.
+            Fondée par Myriam Koubaa, Morpheus est une structure spécialisée dans l&apos;événementiel et la communication de luxe. À travers MediTheria, elle orchestre un défilé inédit à Monaco, mettant en lumière les traditions artisanales revisitées par la mode contemporaine.
           </p>
         </motion.div>
       </section>
 
       {/* Gallery Section */}
       <section className="w-full py-16 px-6 bg-white">
-        <h2 className="text-4xl font-bold mb-8 text-center">Galerie d'art </h2>
+        <h2 className="text-4xl font-bold mb-8 text-center">Galerie d&apos;art </h2>
         <CarouselImages />
       </section>
 
       {/* Vision Section */}
       <section className="w-full py-24 px-6 bg-gray-50 text-center">
         <h2 className="text-4xl font-bold mb-6">
-          L’âme de la Méditerranée sublimée par la mode
+          L&apos;âme de la Méditerranée sublimée par la mode
         </h2>
         <p className="text-lg max-w-3xl mx-auto">
           Chaque pièce du défilé incarne les textures, la lumière et les symboles de la Méditerranée. De la mer à la terre, de la tradition au design, MediTheria rend hommage à un patrimoine vivant et vibrant.
@@ -106,7 +109,7 @@ export default function MediTheriaShowcase() {
         <ul className="list-disc max-w-4xl mx-auto text-left text-lg pl-6 space-y-3">
           <li>Scénographie ouverte, inspirée des voiles et matières naturelles</li>
           <li>Lumière dorée de fin de journée</li>
-          <li>Musique, projections visuelles, et performance d’ouverture</li>
+          <li>Musique, projections visuelles, et performance d&apos;ouverture</li>
           <li>Podium fluide comme une vague, entre oliviers et mosaïques</li>
           <li>Moments forts : apparition surprise, égérie, guest, révélation de MANOS</li>
         </ul>
@@ -119,7 +122,7 @@ export default function MediTheriaShowcase() {
           <li>La mode éthique (fibres naturelles, upcycling, production raisonnée)</li>
           <li>Inclusion féminine (80 % de créatrices & artisanes)</li>
           <li>Transmission du patrimoine et des gestes traditionnels</li>
-          <li>Esthétique au service d’un impact positif</li>
+          <li>Esthétique au service d&apos;un impact positif</li>
         </ul>
       </section>
 
@@ -127,10 +130,10 @@ export default function MediTheriaShowcase() {
       <section className="w-full py-24 px-6 text-center bg-black text-white">
         <h2 className="text-4xl font-bold mb-6">Rejoignez le mouvement</h2>
         <p className="mb-6 max-w-xl mx-auto text-lg">
-          Vous êtes une marque, un créateur, un mécène ou un amoureux du beau ? Contactez-nous pour contribuer à cette célébration unique du luxe méditerranéen.
+          Vous êtes une marque, un créateur, un mécène ou un amoureux du beau&nbsp;? Contactez-nous pour contribuer à cette célébration unique du luxe méditerranéen.
         </p>
         <div className="space-y-2 text-base">
-          <p>📍 Nice Côte d’Azur</p>
+          <p>📍 Nice Côte d&apos;Azur</p>
           <p>📧 contact@morpheus-sa.com</p>
           <p>🌐 morpheus-sa.com</p>
           <p>📞 +33 6 99 58 51 87</p>

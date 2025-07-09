@@ -1,6 +1,7 @@
 "use client";
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
+import Image from "next/image";
 
 const images = [
     "Image1.png",
@@ -53,12 +54,15 @@ export default function CarouselImages() {
                         key={img + idx}
                         className="flex-shrink-0 w-96 bg-gray-50 rounded-lg shadow flex flex-col items-center"
                     >
-                        <img
+                        <Image
                             src={`/images/${img}`}
                             alt={`MediTheria ${img}`}
                             className="w-full h-full object-cover rounded "
                             loading="lazy"
+                            width={384}
+                            height={384}
                         />
+
                     </div>
                 ))}
             </motion.div>
