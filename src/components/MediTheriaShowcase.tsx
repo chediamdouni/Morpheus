@@ -37,16 +37,29 @@ export default function MediTheriaShowcase() {
         />
         <div className="absolute inset-0 bg-black" style={{ opacity: 0.4, zIndex: 1 }} />
 
-        <div className="relative z-10 w-full h-full flex flex-col justify-center items-center py-32">
-          <h1 className="text-5xl md:text-6xl font-HillsideCalligraphy mb-6 max-w-3xl text-white">
+        <div className="relative z-20 w-full h-full flex flex-col justify-center items-center py-32">
+          <motion.h1
+            className="text-5xl md:text-6xl font-HillsideCalligraphy mb-6 max-w-3xl text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 1 }}
+          >
             A Mediterranean Ode to Timeless Luxury
-          </h1>
-          <p className="text-xl max-w-2xl text-white">
+          </motion.h1>
+          <motion.p
+            className="text-xl max-w-2xl text-white"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 1 }}>
             Luxury meets heritage — A défilé like no other in Monaco
-          </p>
-          <button className="mt-8 px-8 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition">
+          </motion.p>
+          <motion.button
+            className="mt-8 px-8 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 1 }}>
             Scroll to Explore
-          </button>
+          </motion.button>
         </div>
       </motion.section>
 
@@ -79,6 +92,9 @@ export default function MediTheriaShowcase() {
           <p className="text-lg max-w-2xl md:max-w-full mx-auto md:mx-0 leading-relaxed">
             Fondée par Myriam Koubaa, Morpheus est une structure spécialisée dans l&apos;événementiel et la communication de luxe. À travers MediTheria, elle orchestre un défilé inédit à Monaco, mettant en lumière les traditions artisanales revisitées par la mode contemporaine.
           </p>
+          <a href="#contact" className="mt-6 px-6 py-2 border border-black text-black hover:bg-black hover:text-white transition rounded">
+            Devenez partenaire
+          </a>
         </motion.div>
       </section>
 
@@ -89,13 +105,45 @@ export default function MediTheriaShowcase() {
       </section>
 
       {/* Vision Section */}
-      <section className="w-full py-24 px-6 bg-gray-50 text-center">
-        <h2 className="text-4xl font-bold mb-6">
-          L&apos;âme de la Méditerranée sublimée par la mode
-        </h2>
-        <p className="text-lg max-w-3xl mx-auto">
-          Chaque pièce du défilé incarne les textures, la lumière et les symboles de la Méditerranée. De la mer à la terre, de la tradition au design, MediTheria rend hommage à un patrimoine vivant et vibrant.
-        </p>
+      <section className="w-full py-24 px-6 bg-[#fdfcf8]">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-18">
+          <motion.div
+            className="w-full md:w-1/2"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <Image
+              src="/images/banner3.jpeg"
+              alt="Inspiration Méditerranéenne"
+              className="rounded-xl shadow-md object-cover w-full"
+              style={{ aspectRatio: "4/5" }}
+              width={480}
+              height={600}
+            />
+          </motion.div>
+
+          <motion.div
+            className="w-full md:w-1/2 text-center md:text-left"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <h2 className="text-4xl font-bold mb-6">
+              La Méditerranée, source d&apos;inspiration intemporelle
+            </h2>
+            <p className="text-lg leading-relaxed text-gray-700">
+              Chaque silhouette raconte une histoire. Les étoffes dansent au rythme des vents marins,
+              les couleurs capturent la lumière dorée des fins d&apos;après-midi,
+              et les coupes puisent dans les traditions ancestrales pour mieux les réinventer. <br className="hidden md:inline" />
+              <span className="block mt-4">
+                À travers MediTheria, la Méditerranée devient matière, mouvement et émotion — un patrimoine vivant sublimé par la création contemporaine.
+              </span>
+            </p>
+          </motion.div>
+        </div>
       </section>
 
       {/* Creators Section */}
