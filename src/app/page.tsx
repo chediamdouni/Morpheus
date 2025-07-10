@@ -1,5 +1,5 @@
-import MediTheriaShowcase from "@/components/MediTheriaShowcase";
+"use client";
 
 export default function Home() {
-  return <MediTheriaShowcase />;
+  return <div>Home</div>;
 }
