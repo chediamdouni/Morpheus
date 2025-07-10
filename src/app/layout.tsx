@@ -32,12 +32,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body
-        className={` ${bebasNeue.variable} antialiased`}
+        className={`${bebasNeue.variable} antialiased`}
       >
-        {children}
+          {children}
       </body>
     </html>
   );
