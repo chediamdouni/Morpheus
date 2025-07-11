@@ -2,7 +2,7 @@
 
 import Hero from "@/components/sections/hero";
 import { ScrollBasedVelocity } from "@/components/sections/Velocity";
-import ImageRevealSection from "@/components/sections/ImageRevealSection";
+import ImageRevealSection from "@/components/sections/service-showcase";
 import DesignerGrid from "@/components/sections/designers";
 import ProgrammeSection from "@/components/sections/program";
 import Exposition from "@/components/sections/exposition";
@@ -18,6 +18,9 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 import localFont from "next/font/local";
 import { LetterSwapForward, LetterSwapPingPong } from "@/components/ui/letter-swap";
 import { cn } from "@/lib/utils";
+import ServicesShowcase from "@/components/sections/service-showcase";
+
+
 const cabinetGrotesk = localFont({
   src: "./CabinetGrotesk-Variable.ttf",
   variable: "--font-cabinet-grotesk",
@@ -44,7 +47,7 @@ export default function Home() {
         <Navbar />
         <Hero
           backgroundType="gradient"
-          backgroundImageUrl="/images/hero.jpeg"
+          backgroundImageUrl="/images/homebanner.png"
           title="Transformez vos rêves en événements qui marquent les esprits et créent des souvenirs inoubliables"
           description=""
           buttonLabel="Concevez un événement"
@@ -53,8 +56,8 @@ export default function Home() {
 
         <SmoothScrollHero
           scrollHeight={1500}
-          desktopImage="/images/Hamasset.png"
-          mobileImage="/images/Hamasset.png"
+          desktopImage="/images/homebanner.png"
+          mobileImage="/images/homebanner.png"
           initialClipPercentage={0}
           finalClipPercentage={10}
         />
@@ -91,14 +94,14 @@ export default function Home() {
             </TextAnimate>
           </h1>
           <div className={cn("flex flex-col items-center justify-center mt-20 gap-10", cabinetGrotesk.className)}>
-              <LetterSwapPingPong staggerFrom="center" label="MediTheria" className="font-semibold text-8xl tracking-tighter underline text-neutral-500 hover:text-neutral-900" />
-              <LetterSwapPingPong staggerFrom="center" label="Hamasset" className="font-semibold text-8xl tracking-tighter underline text-neutral-500 hover:text-neutral-900" />
-              <LetterSwapPingPong staggerFrom="center" label="Koufia" className="font-semibold text-8xl tracking-tighter underline text-neutral-500 hover:text-neutral-900" />
+            <LetterSwapPingPong staggerFrom="center" label="MediTheria" className="font-semibold text-8xl tracking-tighter underline text-neutral-500 hover:text-neutral-900" />
+            <LetterSwapPingPong staggerFrom="center" label="Hamasset" className="font-semibold text-8xl tracking-tighter underline text-neutral-500 hover:text-neutral-900" />
+            <LetterSwapPingPong staggerFrom="center" label="Koufia" className="font-semibold text-8xl tracking-tighter underline text-neutral-500 hover:text-neutral-900" />
 
           </div>
         </div>
-        
-        <ImageRevealSection />
+
+        <ServicesShowcase />
         <ScrollBasedVelocity />
         <DesignerGrid />
         <ProgrammeSection />
