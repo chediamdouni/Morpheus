@@ -20,7 +20,7 @@ export default function Contact() {
             <Navbar />
             <div className="relative w-full flex items-start justify-center pt-[10vw] pb-[2vw] max-w-6xl mx-auto" style={{ fontFamily: cabinetGrotesk.style.fontFamily }}>
                 <h1 className="text-center text-[16vw] font-bold tracking-[-.03em] uppercase mx-auto">
-                    <TextAnimate animation="blurInUp" by="character" once>
+                    <TextAnimate animation="blurInUp" by="word" delay={0.2}>
                         Contact
                     </TextAnimate>
                 </h1>
