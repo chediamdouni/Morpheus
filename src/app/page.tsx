@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/letter-swap";
 import { cn } from "@/lib/utils";
 import ServicesShowcase from "@/components/sections/service-showcase";
+import Link from "next/link";
 
 const boska = localFont({
   src: "./Boska-Variable.ttf",
@@ -42,7 +43,7 @@ export default function Home() {
 
     return () => cancelFrame(update);
   }, []);
-  // bg-[#E8D07A]
+
   return (
     <ReactLenis root options={{ autoRaf: true }}>
       <div className="bg-[#FAF8F1] relative">
@@ -198,11 +199,13 @@ function Navbar() {
           className="size-full"
         />
       </div>
-      <div className="flex justify-end w-40">
-        <Button className="px-4 py-2 h-sm text-base tracking-wide rounded-lg border border-black shadow-none bg-[#05141D]/90 text-white hover:bg-[#05141D]/80 ">
-          Concevez un événement
-        </Button>
-      </div>
+      <Link href={"/contact"}>
+        <div className="flex justify-end w-40">
+          <Button className="px-4 py-2 h-sm text-base tracking-wide rounded-lg border border-black shadow-none bg-[#05141D]/90 text-white hover:bg-[#05141D]/80 ">
+            Concevez un événement
+          </Button>
+        </div>
+      </Link>
     </header>
   );
 }
