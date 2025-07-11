@@ -12,18 +12,20 @@ import { Button } from "@/components/ui/button";
 import SmoothScrollHero from "@/components/ui/smooth-scroll-hero";
 import { useRef, useEffect } from "react";
 import { LenisRef } from "lenis/react";
-import { cancelFrame, frame } from "framer-motion";
+import { cancelFrame, frame, motion } from "framer-motion";
 import { ReactLenis } from "lenis/react";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import localFont from "next/font/local";
-import { LetterSwapForward, LetterSwapPingPong } from "@/components/ui/letter-swap";
+import {
+  LetterSwapForward,
+  LetterSwapPingPong,
+} from "@/components/ui/letter-swap";
 import { cn } from "@/lib/utils";
 import ServicesShowcase from "@/components/sections/service-showcase";
 
-
-const cabinetGrotesk = localFont({
-  src: "./CabinetGrotesk-Variable.ttf",
-  variable: "--font-cabinet-grotesk",
+const boska = localFont({
+  src: "./Boska-Variable.ttf",
+  variable: "--font-boska-variable",
   display: "swap",
 });
 
@@ -48,7 +50,7 @@ export default function Home() {
         <Hero
           backgroundType="gradient"
           backgroundImageUrl="/images/homebanner.png"
-          title="Transformez vos rêves en événements qui marquent les esprits et créent des souvenirs inoubliables"
+          title="Transformez vos rêves en événements qui marquent les esprits et créent des souvenirs"
           description=""
           buttonLabel="Concevez un événement"
           buttonLink="#"
@@ -63,50 +65,119 @@ export default function Home() {
         />
         <div className="relative h-screen w-full flex items-center justify-center">
           <h1
-            className={`text-8xl font-extrabold text-[#05141D] mb-4 leading-[0.9] tracking-tight text-center max-w-6xl mx-auto ${cabinetGrotesk.className}`}
+            className={`text-9xl font-medium text-[#05141D] mb-4 leading-[0.9] tracking-tighter text-center max-w-6xl mx-auto ${boska.className}`}
           >
             <TextAnimate
               animation="blurInDown"
-              by="word"
+              by="line"
               duration={1.5}
               delay={0.2}
             >
-              Notre mission est de transformer vos idées en réalisations
-              d’exception
+              {
+                "Notre mission est de\ntransformer vos idées en\nréalisations d’exception"
+              }
             </TextAnimate>
           </h1>
         </div>
 
         <div className="relative w-full flex flex-col items-center my-20">
-          <p className="text-2xl font-normal text-[#05141D] mb-4 leading-[0.9] tracking-tight text-center max-w-6xl mx-auto">
+          <p className="text-lg font-normal text-[#05141D] mb-8 leading-[0.9] tracking-tight text-center max-w-6xl mx-auto">
             Evénements, expositions, et bien plus encore
           </p>
           <h1
-            className={`text-9xl font-extrabold text-[#05141D] mb-4 leading-[0.9] tracking-tight text-center max-w-6xl mx-auto ${cabinetGrotesk.className}`}
+            className={`scale-125 text-9xl font-extrabold text-[#05141D] mb-4 leading-[0.9] tracking-tight text-center max-w-6xl mx-auto ${boska.className}`}
           >
             <TextAnimate
               animation="blurInDown"
-              by="word"
+              by="text"
               duration={1.5}
               delay={0.2}
             >
               Nos Projets
             </TextAnimate>
           </h1>
-          <div className={cn("flex flex-col items-center justify-center mt-20 gap-10", cabinetGrotesk.className)}>
-            <LetterSwapPingPong staggerFrom="center" label="MediTheria" className="font-semibold text-8xl tracking-tighter underline text-neutral-500 hover:text-neutral-900" />
-            <LetterSwapPingPong staggerFrom="center" label="Hamasset" className="font-semibold text-8xl tracking-tighter underline text-neutral-500 hover:text-neutral-900" />
-            <LetterSwapPingPong staggerFrom="center" label="Koufia" className="font-semibold text-8xl tracking-tighter underline text-neutral-500 hover:text-neutral-900" />
-
-          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className={cn(
+              "flex flex-col h-screen w-full items-center justify-center mt-20 gap-10 relative",
+              boska.className
+            )}
+          >
+            <LetterSwapPingPong
+              staggerFrom="center"
+              label="MediTheria"
+              className="peer/medi font-semibold text-9xl cursor-pointer tracking-[-0.06em] border-b-2 hover:border-b-transparent transition-all opacity-50 hover:opacity-100 border-neutral-900 text-neutral-900"
+            />
+            <LetterSwapPingPong
+              staggerFrom="center"
+              label="Hamasset"
+              className="peer/hamasset font-semibold text-9xl cursor-pointer tracking-[-0.06em] border-b-2 hover:border-b-transparent transition-all opacity-50 hover:opacity-100 border-neutral-900 text-neutral-900"
+            />
+            <LetterSwapPingPong
+              staggerFrom="center"
+              label="Koufia"
+              className="peer/koufia font-semibold text-9xl cursor-pointer tracking-[-0.06em] border-b-2 hover:border-b-transparent transition-all opacity-50 hover:opacity-100 border-neutral-900 text-neutral-900"
+            />
+            <Image
+              src="/images/image1.png"
+              alt="medi"
+              width={400}
+              height={400}
+              className="absolute top-32 left-20 w-50 opacity-0 peer-hover/medi:opacity-100 transition-all duration-800 [clip-path:inset(50%_50%)] peer-hover/medi:[clip-path:inset(0%)]"
+            />
+            <Image
+              src="/images/image1.png"
+              alt="medi"
+              width={400}
+              height={400}
+              className="absolute top-32 right-14 w-50 opacity-0 peer-hover/medi:opacity-100 transition-all duration-800 [clip-path:inset(50%_50%)] peer-hover/medi:[clip-path:inset(0%)]"
+            />
+            <Image
+              src="/images/image1.png"
+              alt="medi"
+              width={400}
+              height={400}
+              className="absolute bottom-52 right-42 w-50 opacity-0 peer-hover/medi:opacity-100 transition-all duration-1000 [clip-path:inset(50%_50%)] peer-hover/medi:[clip-path:inset(0%)]"
+            />
+            
+            <Image
+              src="/images/Hamasset.png"
+              alt="hamasset"
+              width={400}
+              height={400}
+              className="absolute top-32 left-20 w-64 opacity-0 peer-hover/hamasset:opacity-100 transition-all duration-600 [clip-path:inset(50%_50%)] peer-hover/hamasset:[clip-path:inset(0%)]"
+            />
+            <Image
+              src="/images/Hamasset.png"
+              alt="hamasset"
+              width={400}
+              height={400}
+              className="absolute bottom-52 right-42 w-50 opacity-0 peer-hover/hamasset:opacity-100 transition-all duration-1000 [clip-path:inset(50%_50%)] peer-hover/hamasset:[clip-path:inset(0%)]"
+            />
+            <Image
+              src="/images/koufia.png"
+              alt="koufia"
+              width={400}
+              height={400}
+              className="absolute top-32 left-20 w-64 opacity-0 peer-hover/koufia:opacity-100 transition-all duration-600 [clip-path:inset(50%_50%)] peer-hover/koufia:[clip-path:inset(0%)]"
+            />
+            <Image
+              src="/images/emplacement.jpg"
+              alt="koufia"
+              width={400}
+              height={400}
+              className="absolute bottom-52 right-42 w-50 opacity-0 peer-hover/koufia:opacity-100 transition-all duration-1000 [clip-path:inset(50%_50%)] peer-hover/koufia:[clip-path:inset(0%)]"
+            />
+          </motion.div>
         </div>
 
-        <ServicesShowcase />
+        {/* <ServicesShowcase />
         <ScrollBasedVelocity />
         <DesignerGrid />
         <ProgrammeSection />
         <Exposition />
-        <Footerdemo />
+        <Footerdemo /> */}
       </div>
     </ReactLenis>
   );

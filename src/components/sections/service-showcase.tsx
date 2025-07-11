@@ -7,9 +7,9 @@ import Image from "next/image";
 import localFont from "next/font/local";
 import { TextAnimate } from "../magicui/text-animate";
 
-const cabinetGrotesk = localFont({
-    src: "../../app/CabinetGrotesk-Variable.ttf",
-    variable: "--font-cabinet-grotesk",
+const erode = localFont({
+    src: "../../app/Erode-Variable.ttf",
+    variable: "--font-erode-variable",
     display: "swap",
 });
 
@@ -55,7 +55,7 @@ export default function ServicesShowcase() {
     return (
         <section className="w-full max-w-5xl mx-auto py-20 px-4" ref={containerRef}>
             <h1
-                className={`text-7xl font-extrabold text-[#05141D] mb-4 leading-[0.9] tracking-tight text-center max-w-6xl mx-auto ${cabinetGrotesk.className}`}
+                className={`text-7xl font-extrabold text-[#05141D] mb-4 leading-[0.9] tracking-tight text-center max-w-6xl mx-auto ${erode.className}`}
             >
                 <TextAnimate
                     animation="blurInDown"
